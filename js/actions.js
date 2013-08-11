@@ -6,8 +6,9 @@ $(function(){
         var tel = $('#cTel').val();
         // alert(nom+' '+ema+' '+tel);
         if(nom!='' && ema!='' && tel!='')
-            crearContacto(nom,ema,tel);
-    });
+            alert(nom+' '+ema+' '+tel);
+            
+    })
     $('#btnListar').tap(function(){
         listarContactos();
     });
@@ -18,7 +19,7 @@ function listarContactos(){
     function onSuccess(contacts) {
         $('#lista').html('');
     for(i=0;i<contacts.length;i++){
-        $('<li class="forward"><a href="tel:'+contacts[i].phoneNumbers[0].value+' " data-rel="external">'+contacts[i].name.fomatted+'</a></li>').appendTo('#lista')
+        $('<li class="forward"><a href="tel:'+contacts[i].phoneNumbers[0].value+' ">'+contacts[i].name.fomatted+'</a></li>').appendTo('#lista')
     }
 };
 
